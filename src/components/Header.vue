@@ -1,12 +1,23 @@
 <template>
   <div class="header">
-    
-    <h1>MedicNET</h1> 
+    <button @click="show=!show">CLICK</button>
+    <transition 
+     enter-active-class="animated bounce"
+     leave-active-class="animated shake"
+    >
+     <h1 v-if="show">MedicNET</h1>
+    </transition>
+     
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+      show: false
+    }
+  }
   name: 'Header',
   
 }
