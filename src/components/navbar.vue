@@ -1,11 +1,6 @@
 <template>
   <div >   
-      <div >
-       <button @click="mostrar"  class="btn btn-default btn-lg" >></button>
-      <ul class="dropdown-menu" :class="{mostrar: bool}">
-       <li>ajajaj</li>
-      </ul>
-    </div>  
+      
   </div>
 </template>
 

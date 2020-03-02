@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     
-    <p>dfsdfsfd</p>
+    <h1>MedicNET</h1> 
   </div>
 </template>
 

@@ -20,6 +20,8 @@ export default {
   border-radius: 3px;
   background-color: black;
   color: blanchedalmond;
+  padding: 20px 0 20px 0;
+  text-align: center;
 }
 .rectangulo:hover{
   opacity: 0.5;
