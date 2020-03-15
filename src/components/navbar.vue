@@ -1,30 +1,46 @@
 <template>
-  <div >   
-      
-  </div>
+<div>
+  <ul class="nav nav-pills barra">
+     <router-link tag="li" active-class="active" :to="{name: 'home'}" exact><a >Home</a></router-link>
+     <router-link tag="li" active-class="active" :to="{name: 'post'}"><a >Post</a></router-link>
+     <router-link :to="{name:'home'}" tag="li" style="float: inline-end">
+       <a class="btn btn-danger" @click="logOut({nav:false})">Log out</a>
+     </router-link>
+  </ul>
+  
+</div>
 </template>
 
 <script>
 export default {
   data: function () {
-    return{
-      bool: false
+    return{     
     };
   },
-  methods:{
-    mostrar(){
-    this.bool=!this.bool;
-  }
+  methods:{ 
+    logOut(data){
+      this.$store.dispatch('logOut',data);
+    }  
   }
 }
 </script>
-
 <style scoped>
-.mostrar{
-  display: block;
+ul{
+  margin-top: 5px;
 }
-.btn-lg{
-  text-align: left;
-  border-radius: 0px 50% 50% 0px;
+.barra{
+  background-color: rgba(178, 183, 187, 0.616);
+  box-shadow: 0px 0px 6px;
 }
+.barra li a{
+  color: black;
+}
+.barra li.active>a
+{
+  background-color: #8a8c8d;
+}
+.btn-danger{
+  padding: 8px;
+}
+
 </style>

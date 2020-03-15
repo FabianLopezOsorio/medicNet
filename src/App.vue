@@ -1,9 +1,14 @@
 <template>
   <div id="app">
     <Header></Header>
-    <navbar></navbar>
-    <proyectos :titulos="titulos"></proyectos>
-    
+    <navbar v-if="nav"></navbar>
+    <transition 
+    enter-active-class="animated slideInUp"
+    mode="out-in"
+    >
+      <router-view></router-view> 
+    </transition>
+     
   </div>
 </template>
 
@@ -11,23 +16,23 @@
 
 import Header from './components/Header.vue'
 import navbar from './components/navbar.vue'
-import proyectos from './components/proyectos.vue'
+
 
 export default {
   name: 'app',
   data: function(){
 return{
-  titulos: [
-    "Proyecto1",
-    "Proyecto2",
-    "Proyecto3"
-  ]
+  
 }
   },
   components: {
     Header,
-    navbar,
-    proyectos 
+    navbar
+  },
+  computed:{
+    nav(){
+     return this.$store.state.nav;
+    }
   }
 }
 </script>
